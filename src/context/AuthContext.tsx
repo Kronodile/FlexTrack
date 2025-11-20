@@ -1,10 +1,12 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { User, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut as firebaseSignOut, GoogleAuthProvider, signInWithCredential } from 'firebase/auth';
+import { User, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut as firebaseSignOut, GoogleAuthProvider, signInWithCredential, sendPasswordResetEmail } from 'firebase/auth';
 import { FIREBASE_AUTH } from '../firebaseConfig';
-import * as Google from 'expo-auth-session/providers/google';
-import * as WebBrowser from 'expo-web-browser';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
-WebBrowser.maybeCompleteAuthSession();
+// Configure Google Sign-In
+GoogleSignin.configure({
+    webClientId: process.env.EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID || '',
+});
 
 interface AuthContextType {
     user: User | null;
@@ -13,6 +15,7 @@ interface AuthContextType {
     signUp: (email: string, pass: string) => Promise<void>;
     signOut: () => Promise<void>;
     signInWithGoogle: () => Promise<void>;
+    resetPassword: (email: string) => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType>({} as AuthContextType);
@@ -23,10 +26,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const [user, setUser] = useState<User | null>(null);
     const [loading, setLoading] = useState(true);
 
-    const [request, response, promptAsync] = Google.useIdTokenAuthRequest({
-        clientId: '312464502462-fpqam0puumm7fs6j81gt1hpct9caji70.apps.googleusercontent.com',
-    });
-
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(FIREBASE_AUTH, (user) => {
             setUser(user);
@@ -34,14 +33,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         });
         return unsubscribe;
     }, []);
-
-    useEffect(() => {
-        if (response?.type === 'success') {
-            const { id_token } = response.params;
-            const credential = GoogleAuthProvider.credential(id_token);
-            signInWithCredential(FIREBASE_AUTH, credential);
-        }
-    }, [response]);
 
     const signIn = async (email: string, pass: string) => {
         await signInWithEmailAndPassword(FIREBASE_AUTH, email, pass);
@@ -52,15 +43,44 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     };
 
     const signOut = async () => {
-        await firebaseSignOut(FIREBASE_AUTH);
+        try {
+            await firebaseSignOut(FIREBASE_AUTH);
+            // Sign out from Google as well
+            try {
+                await GoogleSignin.signOut();
+            } catch (e) {
+                // Ignore if not signed in with Google
+            }
+        } catch (error) {
+            console.error("Error signing out: ", error);
+        }
     };
 
     const signInWithGoogle = async () => {
-        await promptAsync();
+        try {
+            // Check if device supports Google Play Services
+            await GoogleSignin.hasPlayServices();
+
+            // Get user info from Google
+            const userInfo = await GoogleSignin.signIn();
+
+            // Create Firebase credential with the Google ID token
+            const googleCredential = GoogleAuthProvider.credential(userInfo.data?.idToken);
+
+            // Sign in to Firebase with the credential
+            await signInWithCredential(FIREBASE_AUTH, googleCredential);
+        } catch (error: any) {
+            console.error('Google Sign-In Error:', error);
+            throw error;
+        }
+    };
+
+    const resetPassword = async (email: string) => {
+        await sendPasswordResetEmail(FIREBASE_AUTH, email);
     };
 
     return (
-        <AuthContext.Provider value={{ user, loading, signIn, signUp, signOut, signInWithGoogle }}>
+        <AuthContext.Provider value={{ user, loading, signIn, signUp, signOut, signInWithGoogle, resetPassword }}>
             {children}
         </AuthContext.Provider>
     );

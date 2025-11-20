@@ -27,8 +27,18 @@ export interface WorkoutPlan {
 export const generateWorkoutPlan = async (
   equipment: string,
   split: string,
-  days: number
+  days: number,
+  comments?: string
 ): Promise<WorkoutPlan> => {
+  // Connectivity Check
+  try {
+    const check = await fetch('https://www.google.com', { method: 'HEAD' });
+    console.log('Connectivity Check:', check.status);
+  } catch (netError) {
+    console.error('Connectivity Check Failed:', netError);
+    throw new Error('No Internet Connection. Please check your device settings.');
+  }
+
   const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
   const prompt = `
@@ -38,6 +48,7 @@ export const generateWorkoutPlan = async (
     - Days per week: ${days}
     - Split preference: ${split}
     - Available Equipment: ${equipment}
+    - Additional Notes/Goals: ${comments || 'None'}
 
     Strict Output Requirements:
     1. Return ONLY valid JSON. No markdown formatting, no introductory text.

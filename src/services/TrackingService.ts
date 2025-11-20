@@ -18,20 +18,20 @@ export interface WorkoutLog {
     durationMinutes?: number;
 }
 
-export const saveWorkoutPlan = async (plan: WorkoutPlan) => {
-    const user = FIREBASE_AUTH.currentUser;
-    if (!user) throw new Error("User not authenticated");
+import { LocalStorageService } from './LocalStorageService';
 
+export const saveWorkoutPlan = async (plan: WorkoutPlan) => {
     try {
-        const docRef = await addDoc(collection(FIREBASE_DB, "workoutPlans"), {
-            userId: user.uid,
-            ...plan,
-            createdAt: Timestamp.now(),
-        });
-        console.log("Plan saved with ID: ", docRef.id);
-        return docRef.id;
+        // Get existing plans
+        const existingPlans = await LocalStorageService.getWorkoutPlans();
+        // Add new plan
+        const updatedPlans = [...existingPlans, plan];
+        // Save back to local storage
+        await LocalStorageService.saveWorkoutPlans(updatedPlans);
+        console.log("Plan saved locally");
+        return "local-id-" + Date.now();
     } catch (e) {
-        console.error("Error adding document: ", e);
+        console.error("Error saving plan locally: ", e);
         throw e;
     }
 };
@@ -52,10 +52,5 @@ export const logWorkout = async (log: Omit<WorkoutLog, 'id' | 'userId'>) => {
 };
 
 export const getUserPlans = async () => {
-    const user = FIREBASE_AUTH.currentUser;
-    if (!user) return [];
-
-    const q = query(collection(FIREBASE_DB, "workoutPlans"), where("userId", "==", user.uid));
-    const querySnapshot = await getDocs(q);
-    return querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+    return await LocalStorageService.getWorkoutPlans();
 };

@@ -86,17 +86,19 @@ export default function WorkoutDisplayScreen({ route, navigation }: any) {
                         <StyledText className="text-gray-300 font-bold text-center text-lg">Back</StyledText>
                     </StyledButton>
 
-                    <StyledButton
-                        className="bg-primary p-4 rounded-2xl flex-1 ml-3 shadow-lg shadow-primary/20"
-                        onPress={handleSave}
-                        disabled={saving}
-                    >
-                        {saving ? (
-                            <ActivityIndicator color="black" />
-                        ) : (
-                            <StyledText className="text-black font-bold text-center text-lg">Save Plan</StyledText>
-                        )}
-                    </StyledButton>
+                    {!route.params?.isSaved && (
+                        <StyledButton
+                            className="bg-primary p-4 rounded-2xl flex-1 ml-3 shadow-lg shadow-primary/20"
+                            onPress={handleSave}
+                            disabled={saving}
+                        >
+                            {saving ? (
+                                <ActivityIndicator color="black" />
+                            ) : (
+                                <StyledText className="text-black font-bold text-center text-lg">Save Plan</StyledText>
+                            )}
+                        </StyledButton>
+                    )}
                 </StyledAnimatedView>
             </StyledScrollView>
         </ScreenWrapper>

@@ -16,7 +16,7 @@ export default function LoginScreen({ navigation }: any) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
-    const { signIn, signInWithGoogle } = useAuth();
+    const { signIn, signInWithGoogle, resetPassword } = useAuth();
 
     const handleLogin = async () => {
         if (!email || !password) {
@@ -30,6 +30,19 @@ export default function LoginScreen({ navigation }: any) {
             Alert.alert('Login Failed', error.message);
         } finally {
             setLoading(false);
+        }
+    };
+
+    const handleForgotPassword = async () => {
+        if (!email) {
+            Alert.alert('Email Required', 'Please enter your email address first.');
+            return;
+        }
+        try {
+            await resetPassword(email);
+            Alert.alert('Success', 'Password reset email sent! Check your inbox.');
+        } catch (error: any) {
+            Alert.alert('Error', error.message || 'Failed to send reset email.');
         }
     };
 
@@ -61,6 +74,9 @@ export default function LoginScreen({ navigation }: any) {
                         onChangeText={setPassword}
                         secureTextEntry
                     />
+                    <StyledButton onPress={handleForgotPassword} className="mt-2">
+                        <StyledText className="text-primary text-sm text-right">Forgot Password?</StyledText>
+                    </StyledButton>
                 </StyledAnimatedView>
 
                 <StyledAnimatedView entering={FadeInDown.delay(800).duration(1000).springify()}>

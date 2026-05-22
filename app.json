@@ -2,7 +2,7 @@
   "expo": {
     "name": "FlexTrack",
     "slug": "FlexTrack",
-    "version": "1.0.0",
+    "version": "0.2.0-alpha",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -18,7 +18,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#0A0E27"
+        "backgroundColor": "#FFFFFF"
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,

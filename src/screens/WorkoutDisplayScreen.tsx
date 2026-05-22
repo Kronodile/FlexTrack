@@ -1,26 +1,41 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView, TouchableOpacity, Alert, ActivityIndicator } from 'react-native';
-import { styled } from 'nativewind';
-import { WorkoutPlan } from '../services/GeminiService';
+import { View, ScrollView, TouchableOpacity, Alert, ActivityIndicator, Modal, KeyboardAvoidingView, Platform } from 'react-native';
+import { WorkoutPlan, refineWorkoutPlan } from '../services/GeminiService';
 import { saveWorkoutPlan } from '../services/TrackingService';
 import ScreenWrapper from '../components/ScreenWrapper';
 import Animated, { FadeInDown } from 'react-native-reanimated';
-
-const StyledView = styled(View);
-const StyledText = styled(Text);
-const StyledScrollView = styled(ScrollView);
-const StyledButton = styled(TouchableOpacity);
-
-const StyledAnimatedView = styled(Animated.View);
+import { Ionicons } from '@expo/vector-icons';
+import { Button } from '../components/ui/Button';
+import { TextInput } from '../components/ui/TextInput';
+import { Typography } from '../components/ui/Typography';
+import { Card } from '../components/ui/Card';
+import { DiagonalPattern } from '../components/patterns/DiagonalPattern';
 
 export default function WorkoutDisplayScreen({ route, navigation }: any) {
-    const { plan } = route.params as { plan: WorkoutPlan };
+    const { plan, isSaved: initialIsSaved, showRefine } = route.params as { plan: WorkoutPlan, isSaved?: boolean, showRefine?: boolean };
+    const [currentPlan, setCurrentPlan] = useState<WorkoutPlan>(plan);
+    const [isSaved, setIsSaved] = useState(!!initialIsSaved);
     const [saving, setSaving] = useState(false);
+    const [refining, setRefining] = useState(false);
+    const [refineModalVisible, setRefineModalVisible] = useState(false);
+    const [refineInstructions, setRefineInstructions] = useState('');
+    const [collapsedDays, setCollapsedDays] = useState<Record<number, boolean>>({});
+
+    const toggleDay = (index: number) => {
+        setCollapsedDays(prev => ({ ...prev, [index]: !prev[index] }));
+    };
+
+    React.useEffect(() => {
+        if (showRefine) {
+            setRefineModalVisible(true);
+        }
+    }, [showRefine]);
 
     const handleSave = async () => {
         setSaving(true);
         try {
-            await saveWorkoutPlan(plan);
+            await saveWorkoutPlan(currentPlan);
+            setIsSaved(true);
             Alert.alert('Success', 'Workout plan saved to your profile!', [
                 { text: 'OK', onPress: () => navigation.navigate('Home') }
             ]);
@@ -31,76 +46,161 @@ export default function WorkoutDisplayScreen({ route, navigation }: any) {
         }
     };
 
+    const handleRefine = async () => {
+        if (!refineInstructions.trim()) {
+            Alert.alert('Error', 'Please enter instructions for refinement.');
+            return;
+        }
+
+        setRefining(true);
+        try {
+            const newPlan = await refineWorkoutPlan(currentPlan, refineInstructions);
+            setCurrentPlan(newPlan);
+            setIsSaved(false);
+            setRefineModalVisible(false);
+            setRefineInstructions('');
+            Alert.alert('Success', 'Workout plan refined! You can now save this new version.');
+        } catch (error: any) {
+            Alert.alert('Error', 'Failed to refine plan. Please try again.');
+            console.error(error);
+        } finally {
+            setRefining(false);
+        }
+    };
+
     return (
-        <ScreenWrapper>
-            <StyledScrollView className="flex-1 px-4" showsVerticalScrollIndicator={false}>
-                <StyledAnimatedView entering={FadeInDown.delay(200).duration(800).springify()}>
-                    <StyledText className="text-primary text-3xl font-bold mt-4 mb-2 text-center tracking-tight">
-                        {plan.split_name}
-                    </StyledText>
-                    <StyledText className="text-gray-400 text-center mb-8 text-lg">
-                        {plan.days_per_week} Days / Week
-                    </StyledText>
-                </StyledAnimatedView>
+        <ScreenWrapper className="bg-swiss-bg">
+            <DiagonalPattern />
+            <ScrollView className="flex-1 px-4" showsVerticalScrollIndicator={false}>
+                <Animated.View entering={FadeInDown.delay(200).duration(800)} className="mb-8 mt-6">
+                    <Typography variant="h2" className="text-center">{currentPlan.split_name}</Typography>
+                    <Typography variant="body" className="text-center font-inter-bold mt-2 uppercase tracking-widest text-swiss-fg">
+                        {currentPlan.days_per_week} DAYS / WEEK
+                    </Typography>
+                </Animated.View>
 
-                {plan.routine.map((day, index) => (
-                    <StyledAnimatedView
+                {currentPlan.routine.map((day, index) => (
+                    <Animated.View
                         key={index}
-                        entering={FadeInDown.delay(400 + (index * 200)).duration(800).springify()}
-                        className="bg-surface/80 p-5 rounded-2xl mb-6 border border-gray-700 shadow-lg"
+                        entering={FadeInDown.delay(400 + (index * 200)).duration(800)}
+                        className="mb-6"
                     >
-                        <StyledView className="flex-row justify-between items-center mb-3">
-                            <StyledText className="text-secondary text-2xl font-bold">{day.day}</StyledText>
-                            <StyledView className="bg-primary/10 px-3 py-1 rounded-full">
-                                <StyledText className="text-primary text-xs font-bold uppercase">{day.focus}</StyledText>
-                            </StyledView>
-                        </StyledView>
+                        <Card className="bg-swiss-bg">
+                            <TouchableOpacity 
+                                onPress={() => toggleDay(index)}
+                                activeOpacity={0.7}
+                            >
+                                <View className="flex-row flex-wrap justify-between items-center mb-3">
+                                    <View className="flex-row items-center mr-2">
+                                        <Typography variant="number">{index + 1}.</Typography>
+                                        <Typography variant="h3" className="mr-2">{day.day}</Typography>
+                                        <Ionicons 
+                                            name={collapsedDays[index] ? "add-outline" : "remove-outline"} 
+                                            size={24} 
+                                            color="#000000" 
+                                        />
+                                    </View>
+                                    <View className="bg-swiss-fg px-3 py-1">
+                                        <Typography variant="label" className="text-swiss-bg">{day.focus}</Typography>
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
 
-                        <StyledText className="text-gray-400 text-sm mb-4 italic border-b border-gray-700 pb-3">
-                            🔥 Warmup: {day.warmup}
-                        </StyledText>
+                            {!collapsedDays[index] && (
+                                <View className="mt-4 pt-4 border-t-4 border-swiss-fg">
+                                    <Typography variant="body" className="font-inter-bold mb-6 text-swiss-accent uppercase tracking-widest">
+                                        WARMUP: {day.warmup}
+                                    </Typography>
 
-                        {day.exercises.map((exercise, idx) => (
-                            <StyledView key={idx} className="mb-4 pl-3 border-l-2 border-secondary/50">
-                                <StyledText className="text-white font-bold text-lg">{exercise.name}</StyledText>
-                                <StyledView className="flex-row justify-between mt-1">
-                                    <StyledText className="text-gray-300 text-sm font-medium">
-                                        {exercise.sets} sets x {exercise.reps}
-                                    </StyledText>
-                                    <StyledText className="text-gray-500 text-sm">
-                                        ⏱ {exercise.rest}
-                                    </StyledText>
-                                </StyledView>
-                                <StyledText className="text-primary/80 text-xs mt-1 font-medium">{exercise.weight_guidance}</StyledText>
-                                {exercise.notes && <StyledText className="text-gray-500 text-xs mt-1 italic">{exercise.notes}</StyledText>}
-                            </StyledView>
-                        ))}
-                    </StyledAnimatedView>
+                                    {day.exercises.map((exercise, idx) => (
+                                        <View key={idx} className="mb-6 pl-4 border-l-4 border-swiss-fg">
+                                            <Typography variant="h3" className="mb-2">{exercise.name}</Typography>
+                                            <View className="flex-row justify-between mb-2">
+                                                <Typography variant="label">
+                                                    {exercise.sets} SETS × {exercise.reps}
+                                                </Typography>
+                                                <Typography variant="label">
+                                                    REST: {exercise.rest}
+                                                </Typography>
+                                            </View>
+                                            <Typography variant="body" className="font-inter-bold text-swiss-accent text-sm mb-1 uppercase tracking-widest">{exercise.weight_guidance}</Typography>
+                                            {exercise.notes && <Typography variant="body" className="text-sm italic text-swiss-fg">{exercise.notes}</Typography>}
+                                        </View>
+                                    ))}
+                                </View>
+                            )}
+                        </Card>
+                    </Animated.View>
                 ))}
 
-                <StyledAnimatedView entering={FadeInDown.delay(1000).duration(800).springify()} className="flex-row justify-between mb-10 mt-4">
-                    <StyledButton
-                        className="bg-surface p-4 rounded-2xl flex-1 mr-3 border border-gray-700"
-                        onPress={() => navigation.goBack()}
-                    >
-                        <StyledText className="text-gray-300 font-bold text-center text-lg">Back</StyledText>
-                    </StyledButton>
+                <Animated.View entering={FadeInDown.delay(1000).duration(800)} className="flex-col mb-12 space-y-4">
+                    <View className="flex-row space-x-4 mb-4">
+                        <View className="flex-1 mr-2">
+                            <Button
+                                title="REFINE"
+                                variant="outline"
+                                onPress={() => setRefineModalVisible(true)}
+                            />
+                        </View>
+                        {!isSaved && (
+                            <View className="flex-1 ml-2">
+                                <Button
+                                    title={saving ? "SAVING..." : "SAVE PLAN"}
+                                    onPress={handleSave}
+                                    disabled={saving}
+                                />
+                            </View>
+                        )}
+                    </View>
 
-                    {!route.params?.isSaved && (
-                        <StyledButton
-                            className="bg-primary p-4 rounded-2xl flex-1 ml-3 shadow-lg shadow-primary/20"
-                            onPress={handleSave}
-                            disabled={saving}
-                        >
-                            {saving ? (
-                                <ActivityIndicator color="black" />
-                            ) : (
-                                <StyledText className="text-black font-bold text-center text-lg">Save Plan</StyledText>
-                            )}
-                        </StyledButton>
-                    )}
-                </StyledAnimatedView>
-            </StyledScrollView>
+                    <Button
+                        title="GO BACK"
+                        variant="outline"
+                        onPress={() => navigation.goBack()}
+                        className="border-transparent bg-transparent"
+                    />
+                </Animated.View>
+            </ScrollView>
+
+            {/* Refine Modal */}
+            <Modal
+                animationType="slide"
+                transparent={true}
+                visible={refineModalVisible}
+                onRequestClose={() => setRefineModalVisible(false)}
+            >
+                <KeyboardAvoidingView
+                    behavior={Platform.OS === "ios" ? "padding" : "height"}
+                    style={{ flex: 1, justifyContent: 'flex-end' }}
+                    keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 20}
+                >
+                    <View className="bg-swiss-bg border-t-4 border-swiss-fg p-8 h-1/2 shadow-2xl">
+                        <View className="flex-row justify-between items-center mb-8 border-b-4 border-swiss-fg pb-4">
+                            <Typography variant="h2">REFINE PLAN</Typography>
+                            <TouchableOpacity onPress={() => setRefineModalVisible(false)}>
+                                <Ionicons name="close-outline" size={40} color="#000000" />
+                            </TouchableOpacity>
+                        </View>
+
+                        <TextInput
+                            label="INSTRUCTIONS"
+                            placeholder="WHAT WOULD YOU LIKE TO CHANGE?"
+                            multiline
+                            textAlignVertical="top"
+                            style={{ minHeight: 120 }}
+                            value={refineInstructions}
+                            onChangeText={setRefineInstructions}
+                        />
+
+                        <Button
+                            title={refining ? "APPLYING..." : "APPLY CHANGES"}
+                            onPress={handleRefine}
+                            disabled={refining}
+                            className="mt-4"
+                        />
+                    </View>
+                </KeyboardAvoidingView>
+            </Modal>
         </ScreenWrapper>
     );
 }

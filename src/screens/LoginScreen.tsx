@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, ActivityIndicator, Alert } from 'react-native';
-import { styled } from 'nativewind';
+import { View, ActivityIndicator, Alert } from 'react-native';
 import { useAuth } from '../context/AuthContext';
 import ScreenWrapper from '../components/ScreenWrapper';
 import Animated, { FadeInDown, FadeInUp } from 'react-native-reanimated';
-
-const StyledView = styled(View);
-const StyledText = styled(Text);
-const StyledInput = styled(TextInput);
-const StyledButton = styled(TouchableOpacity);
-
-const StyledAnimatedView = styled(Animated.View);
+import FlexTrackLogo from '../components/FlexTrackLogo';
+import { Button } from '../components/ui/Button';
+import { TextInput } from '../components/ui/TextInput';
+import { Typography } from '../components/ui/Typography';
+import { GridPattern } from '../components/patterns/GridPattern';
 
 export default function LoginScreen({ navigation }: any) {
     const [email, setEmail] = useState('');
@@ -47,75 +44,78 @@ export default function LoginScreen({ navigation }: any) {
     };
 
     return (
-        <ScreenWrapper className="justify-center px-6">
-            <StyledAnimatedView entering={FadeInUp.delay(200).duration(1000).springify()}>
-                <StyledText className="text-primary text-5xl font-bold mb-2 text-center tracking-tighter">FlexTrack</StyledText>
-                <StyledText className="text-gray-400 text-center mb-12 text-lg">Your AI Workout Companion</StyledText>
-            </StyledAnimatedView>
+        <ScreenWrapper className="justify-center px-6 bg-swiss-bg">
+            <GridPattern />
+            
+            <Animated.View entering={FadeInUp.delay(200).duration(1000)} className="mb-12">
+                <FlexTrackLogo size={48} />
+                <Typography variant="body" className="mt-4 text-swiss-fg">
+                    THE OBJECTIVE WORKOUT COMPANION
+                </Typography>
+            </Animated.View>
 
-            <StyledView className="space-y-4">
-                <StyledAnimatedView entering={FadeInDown.delay(400).duration(1000).springify()}>
-                    <StyledInput
-                        className="bg-surface/80 text-white p-4 rounded-2xl border border-gray-700 focus:border-primary text-lg"
-                        placeholder="Email"
-                        placeholderTextColor="#666"
+            <View className="space-y-4">
+                <Animated.View entering={FadeInDown.delay(400).duration(1000)}>
+                    <TextInput
+                        label="Email Address"
+                        placeholder="NAME@EXAMPLE.COM"
                         value={email}
                         onChangeText={setEmail}
                         autoCapitalize="none"
                     />
-                </StyledAnimatedView>
+                </Animated.View>
 
-                <StyledAnimatedView entering={FadeInDown.delay(600).duration(1000).springify()}>
-                    <StyledInput
-                        className="bg-surface/80 text-white p-4 rounded-2xl border border-gray-700 focus:border-primary text-lg"
-                        placeholder="Password"
-                        placeholderTextColor="#666"
+                <Animated.View entering={FadeInDown.delay(600).duration(1000)}>
+                    <TextInput
+                        label="Password"
+                        placeholder="ENTER PASSWORD"
                         value={password}
                         onChangeText={setPassword}
                         secureTextEntry
                     />
-                    <StyledButton onPress={handleForgotPassword} className="mt-2">
-                        <StyledText className="text-primary text-sm text-right">Forgot Password?</StyledText>
-                    </StyledButton>
-                </StyledAnimatedView>
+                </Animated.View>
 
-                <StyledAnimatedView entering={FadeInDown.delay(800).duration(1000).springify()}>
-                    <StyledButton
-                        className="bg-primary p-4 rounded-2xl mt-4 shadow-lg shadow-primary/20"
+                <Animated.View entering={FadeInDown.delay(700).duration(1000)}>
+                    <Button 
+                        title={loading ? "LOADING..." : "SIGN IN"} 
                         onPress={handleLogin}
                         disabled={loading}
-                    >
-                        {loading ? (
-                            <ActivityIndicator color="black" />
-                        ) : (
-                            <StyledText className="text-black font-bold text-center text-lg">Sign In</StyledText>
-                        )}
-                    </StyledButton>
-                </StyledAnimatedView>
+                        className="mt-4"
+                    />
+                </Animated.View>
 
-                <StyledAnimatedView entering={FadeInDown.delay(1000).duration(1000).springify()} className="flex-row items-center my-6">
-                    <StyledView className="flex-1 h-[1px] bg-gray-800" />
-                    <StyledText className="text-gray-500 mx-4">OR</StyledText>
-                    <StyledView className="flex-1 h-[1px] bg-gray-800" />
-                </StyledAnimatedView>
+                <Animated.View entering={FadeInDown.delay(800).duration(1000)}>
+                    <Button 
+                        title="FORGOT PASSWORD"
+                        variant="outline"
+                        onPress={handleForgotPassword}
+                        className="mt-2"
+                    />
+                </Animated.View>
 
-                <StyledAnimatedView entering={FadeInDown.delay(1200).duration(1000).springify()}>
-                    <StyledButton
-                        className="bg-white p-4 rounded-2xl flex-row justify-center items-center shadow-lg"
-                        onPress={() => signInWithGoogle()}
-                    >
-                        <StyledText className="text-black font-bold text-lg">Continue with Google</StyledText>
-                    </StyledButton>
-                </StyledAnimatedView>
+                <Animated.View entering={FadeInDown.delay(1000).duration(1000)} className="flex-row items-center my-6">
+                    <View className="flex-1 h-[3px] bg-swiss-fg" />
+                    <Typography variant="label" className="mx-4">OR</Typography>
+                    <View className="flex-1 h-[3px] bg-swiss-fg" />
+                </Animated.View>
 
-                <StyledAnimatedView entering={FadeInDown.delay(1400).duration(1000).springify()}>
-                    <StyledButton onPress={() => navigation.navigate('SignUp')} className="mt-6">
-                        <StyledText className="text-gray-400 text-center text-base">
-                            Don't have an account? <StyledText className="text-primary font-bold">Sign Up</StyledText>
-                        </StyledText>
-                    </StyledButton>
-                </StyledAnimatedView>
-            </StyledView>
+                <Animated.View entering={FadeInDown.delay(1200).duration(1000)}>
+                    <Button 
+                        title="CONTINUE WITH GOOGLE" 
+                        variant="outline"
+                        onPress={() => signInWithGoogle()} 
+                    />
+                </Animated.View>
+
+                <Animated.View entering={FadeInDown.delay(1400).duration(1000)}>
+                    <Button 
+                        title="CREATE ACCOUNT" 
+                        variant="outline"
+                        onPress={() => navigation.navigate('SignUp')}
+                        className="mt-6 border-transparent bg-transparent"
+                    />
+                </Animated.View>
+            </View>
         </ScreenWrapper>
     );
 }

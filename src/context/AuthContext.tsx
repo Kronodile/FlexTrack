@@ -4,8 +4,40 @@ import { FIREBASE_AUTH } from '../firebaseConfig';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
 // Configure Google Sign-In
+// Resolve web client id: prefer env var, otherwise read from google-services.json
+let webClientId = process.env.EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID || '';
+if (!webClientId) {
+    try {
+        // Load the downloaded google-services.json placed at repo root or android/app
+        // Try root first, then android/app
+        // eslint-disable-next-line @typescript-eslint/no-var-requires
+        const rootConfig = require('../../google-services.json');
+        const clients = rootConfig.client || [];
+        if (clients.length > 0) {
+            const oauthClients = clients[0].oauth_client || [];
+            const webClient = oauthClients.find((c: any) => c.client_type === 3);
+            if (webClient && webClient.client_id) webClientId = webClient.client_id;
+        }
+    } catch (e) {
+        try {
+            // Fallback to android/app version
+            // eslint-disable-next-line @typescript-eslint/no-var-requires
+            const appConfig = require('../../android/app/google-services.json');
+            const clients = appConfig.client || [];
+            if (clients.length > 0) {
+                const oauthClients = clients[0].oauth_client || [];
+                const webClient = oauthClients.find((c: any) => c.client_type === 3);
+                if (webClient && webClient.client_id) webClientId = webClient.client_id;
+            }
+        } catch (_) {
+            // ignore - webClientId will stay empty
+        }
+    }
+}
+
 GoogleSignin.configure({
-    webClientId: process.env.EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID || '',
+    webClientId: webClientId || '',
+    offlineAccess: true,
 });
 
 interface AuthContextType {
@@ -63,9 +95,32 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
             // Get user info from Google
             const userInfo = await GoogleSignin.signIn();
+            console.log('GoogleSignin.signIn() userInfo:', userInfo);
+
+            // Try to extract idToken from common locations
+            let idToken: string | undefined = (userInfo && ((userInfo as any).idToken || (userInfo as any).data?.idToken)) || undefined;
+
+            // Fallback: ask the native module for tokens
+            if (!idToken) {
+                try {
+                    const tokens = await GoogleSignin.getTokens();
+                    console.log('GoogleSignin.getTokens() returned:', tokens);
+                    idToken = tokens?.idToken;
+                } catch (e) {
+                    console.warn('GoogleSignin.getTokens() failed:', e);
+                }
+            }
+
+            if (!idToken) {
+                console.error('No idToken returned by Google Sign-In. userInfo:', userInfo);
+                // Match Firebase error shape for easier debugging upstream
+                const err: any = new Error('No idToken returned from Google Sign-In');
+                err.code = 'auth/argument-error';
+                throw err;
+            }
 
             // Create Firebase credential with the Google ID token
-            const googleCredential = GoogleAuthProvider.credential(userInfo.data?.idToken);
+            const googleCredential = GoogleAuthProvider.credential(idToken);
 
             // Sign in to Firebase with the credential
             await signInWithCredential(FIREBASE_AUTH, googleCredential);

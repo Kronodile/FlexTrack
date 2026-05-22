@@ -18,7 +18,7 @@ export default function AppNavigator() {
 
     return (
         <NavigationContainer>
-            <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <Stack.Navigator screenOptions={{ headerShown: false, animation: 'fade_from_bottom', animationDuration: 150 }}>
                 {user ? (
                     <>
                         <Stack.Screen name="Home" component={WorkoutInputScreen} />

@@ -1,0 +1,616 @@
+﻿src/components/FlexTrackLogo.tsx(9,11): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/components/FlexTrackLogo.tsx(10,32): error TS2322: Type '{ children: string; variant: "h1"; className: string; style: { fontSize: number; }; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/components/FlexTrackLogo.tsx(13,32): error TS2322: Type '{ children: string; variant: "h1"; className: string; style: { fontSize: number; }; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/components/ScreenWrapper.tsx(15,53): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element; style: AbsoluteFillStyle; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element; style: AbsoluteFillStyle; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/components/ui/Card.tsx(30,7): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps & PressableProps & RefAttributes<View>): string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | ... 4 more ... | undefined', gave the following error.
+    Type '{ children: ReactNode; hitSlop?: number | Insets | null | undefined; id?: string | undefined; needsOffscreenAlphaCompositing?: boolean | undefined; onLayout?: ((event: LayoutChangeEvent) => void) | undefined; ... 88 more ...; style: StyleProp<...>; } | { ...; }' is not assignable to type 'IntrinsicAttributes & ViewProps & PressableProps & RefAttributes<View>'.
+      Type '{ children: ReactNode; hitSlop?: number | Insets | null | undefined; id?: string | undefined; needsOffscreenAlphaCompositing?: boolean | undefined; onLayout?: ((event: LayoutChangeEvent) => void) | undefined; ... 88 more ...; style: StyleProp<...>; }' is not assignable to type 'IntrinsicAttributes & ViewProps & PressableProps & RefAttributes<View>'.
+        Property 'className' does not exist on type 'IntrinsicAttributes & ViewProps & PressableProps & RefAttributes<View>'.
+  Overload 2 of 2, '(props: ViewProps & PressableProps & RefAttributes<View>, context: any): string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<...>> | ... 4 more ... | undefined', gave the following error.
+    Type '{ children: ReactNode; hitSlop?: number | Insets | null | undefined; id?: string | undefined; needsOffscreenAlphaCompositing?: boolean | undefined; onLayout?: ((event: LayoutChangeEvent) => void) | undefined; ... 88 more ...; style: StyleProp<...>; } | { ...; }' is not assignable to type 'IntrinsicAttributes & ViewProps & PressableProps & RefAttributes<View>'.
+      Type '{ children: ReactNode; hitSlop?: number | Insets | null | undefined; id?: string | undefined; needsOffscreenAlphaCompositing?: boolean | undefined; onLayout?: ((event: LayoutChangeEvent) => void) | undefined; ... 88 more ...; style: StyleProp<...>; }' is not assignable to type 'IntrinsicAttributes & ViewProps & PressableProps & RefAttributes<View>'.
+        Property 'className' does not exist on type 'IntrinsicAttributes & ViewProps & PressableProps & RefAttributes<View>'.
+src/components/ui/TextInput.tsx(12,11): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: ("" | Element | undefined)[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: ("" | Element | undefined)[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/components/ui/TextInput.tsx(14,15): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: TextProps): Text', gave the following error.
+    Type '{ children: string; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<Text> & Readonly<TextProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<Text> & Readonly<TextProps>'.
+  Overload 2 of 2, '(props: TextProps, context: any): Text', gave the following error.
+    Type '{ children: string; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<Text> & Readonly<TextProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<Text> & Readonly<TextProps>'.
+src/components/ui/TextInput.tsx(19,9): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: TextInputProps): TextInput', gave the following error.
+    Type '{ allowFontScaling?: boolean | undefined; autoCapitalize?: "none" | "sentences" | "words" | "characters" | undefined; autoComplete?: "additional-name" | "address-line1" | "address-line2" | ... 54 more ... | undefined; ... 155 more ...; style: StyleProp<...>; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<TextInput> & Readonly<TextInputProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<TextInput> & Readonly<TextInputProps>'.
+  Overload 2 of 2, '(props: TextInputProps, context: any): TextInput', gave the following error.
+    Type '{ allowFontScaling?: boolean | undefined; autoCapitalize?: "none" | "sentences" | "words" | "characters" | undefined; autoComplete?: "additional-name" | "address-line1" | "address-line2" | ... 54 more ... | undefined; ... 155 more ...; style: StyleProp<...>; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<TextInput> & Readonly<TextInputProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<TextInput> & Readonly<TextInputProps>'.
+src/components/ui/Typography.tsx(8,75): error TS2339: Property 'className' does not exist on type 'TypographyProps'.
+src/components/ui/Typography.tsx(33,11): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: TextProps): Text', gave the following error.
+    Type '{ children: ReactNode; allowFontScaling?: boolean | undefined; ellipsizeMode?: "head" | "middle" | "tail" | "clip" | undefined; id?: string | undefined; lineBreakMode?: "head" | ... 3 more ... | undefined; ... 61 more ...; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<Text> & Readonly<TextProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<Text> & Readonly<TextProps>'.
+  Overload 2 of 2, '(props: TextProps, context: any): Text', gave the following error.
+    Type '{ children: ReactNode; allowFontScaling?: boolean | undefined; ellipsizeMode?: "head" | "middle" | "tail" | "clip" | undefined; id?: string | undefined; lineBreakMode?: "head" | ... 3 more ... | undefined; ... 61 more ...; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<Text> & Readonly<TextProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<Text> & Readonly<TextProps>'.
+src/context/AuthContext.tsx(101,70): error TS2339: Property 'idToken' does not exist on type 'SignInResponse'.
+  Property 'idToken' does not exist on type 'SignInSuccessResponse'.
+src/screens/LoginScreen.tsx(50,74): error TS2322: Type '{ children: Element[]; entering: FadeInUp; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+src/screens/LoginScreen.tsx(52,44): error TS2322: Type '{ children: string; variant: "body"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/LoginScreen.tsx(57,19): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/LoginScreen.tsx(83,25): error TS2322: Type '{ title: string; onPress: () => Promise<void>; disabled: boolean; className: string; }' is not assignable to type 'IntrinsicAttributes & ButtonProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & ButtonProps'.
+src/screens/LoginScreen.tsx(92,25): error TS2322: Type '{ title: string; variant: "outline"; onPress: () => Promise<void>; className: string; }' is not assignable to type 'IntrinsicAttributes & ButtonProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & ButtonProps'.
+src/screens/LoginScreen.tsx(96,81): error TS2322: Type '{ children: Element[]; entering: FadeInDown; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+src/screens/LoginScreen.tsx(97,27): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/LoginScreen.tsx(98,49): error TS2322: Type '{ children: string; variant: "label"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/LoginScreen.tsx(99,27): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/LoginScreen.tsx(115,25): error TS2322: Type '{ title: string; variant: "outline"; onPress: () => any; className: string; }' is not assignable to type 'IntrinsicAttributes & ButtonProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & ButtonProps'.
+src/screens/ProgressScreen.tsx(328,25): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ScrollViewProps): ScrollView', gave the following error.
+    Type '{ children: (false | Element | Element[])[]; className: string; showsVerticalScrollIndicator: false; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<ScrollView> & Readonly<ScrollViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<ScrollView> & Readonly<ScrollViewProps>'.
+  Overload 2 of 2, '(props: ScrollViewProps, context: any): ScrollView', gave the following error.
+    Type '{ children: (false | Element | Element[])[]; className: string; showsVerticalScrollIndicator: false; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<ScrollView> & Readonly<ScrollViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<ScrollView> & Readonly<ScrollViewProps>'.
+src/screens/SignUpScreen.tsx(37,74): error TS2322: Type '{ children: Element[]; entering: FadeInUp; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+src/screens/SignUpScreen.tsx(38,42): error TS2322: Type '{ children: string; variant: "h1"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/SignUpScreen.tsx(39,42): error TS2322: Type '{ children: string; variant: "h1"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/SignUpScreen.tsx(40,44): error TS2322: Type '{ children: string; variant: "body"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/SignUpScreen.tsx(45,19): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/SignUpScreen.tsx(71,25): error TS2322: Type '{ title: string; onPress: () => Promise<void>; disabled: boolean; className: string; }' is not assignable to type 'IntrinsicAttributes & ButtonProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & ButtonProps'.
+src/screens/SignUpScreen.tsx(80,25): error TS2322: Type '{ title: string; variant: "outline"; onPress: () => any; className: string; }' is not assignable to type 'IntrinsicAttributes & ButtonProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & ButtonProps'.
+src/screens/WorkoutDisplayScreen.tsx(74,25): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ScrollViewProps): ScrollView', gave the following error.
+    Type '{ children: (Element | Element[])[]; className: string; showsVerticalScrollIndicator: false; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<ScrollView> & Readonly<ScrollViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<ScrollView> & Readonly<ScrollViewProps>'.
+  Overload 2 of 2, '(props: ScrollViewProps, context: any): ScrollView', gave the following error.
+    Type '{ children: (Element | Element[])[]; className: string; showsVerticalScrollIndicator: false; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<ScrollView> & Readonly<ScrollViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<ScrollView> & Readonly<ScrollViewProps>'.
+src/screens/WorkoutDisplayScreen.tsx(75,79): error TS2322: Type '{ children: Element[]; entering: FadeInDown; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+src/screens/WorkoutDisplayScreen.tsx(76,46): error TS2322: Type '{ children: string; variant: "h2"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutDisplayScreen.tsx(77,48): error TS2322: Type '{ children: (string | number)[]; variant: "body"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutDisplayScreen.tsx(86,25): error TS2322: Type '{ children: Element; key: number; entering: FadeInDown; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+src/screens/WorkoutDisplayScreen.tsx(88,31): error TS2322: Type '{ children: (false | Element)[]; className: string; }' is not assignable to type 'IntrinsicAttributes & CardProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & CardProps'.
+src/screens/WorkoutDisplayScreen.tsx(93,39): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutDisplayScreen.tsx(94,43): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutDisplayScreen.tsx(96,66): error TS2322: Type '{ children: string; variant: "h3"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutDisplayScreen.tsx(103,43): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutDisplayScreen.tsx(104,69): error TS2322: Type '{ children: string; variant: "label"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutDisplayScreen.tsx(110,39): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: (Element | Element[])[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: (Element | Element[])[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutDisplayScreen.tsx(111,64): error TS2322: Type '{ children: string[]; variant: "body"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutDisplayScreen.tsx(116,57): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: ("" | Element | undefined)[]; key: number; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: ("" | Element | undefined)[]; key: number; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutDisplayScreen.tsx(117,70): error TS2322: Type '{ children: string; variant: "h3"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutDisplayScreen.tsx(118,51): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutDisplayScreen.tsx(126,72): error TS2322: Type '{ children: string; variant: "body"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutDisplayScreen.tsx(127,91): error TS2322: Type '{ children: string; variant: "body"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutDisplayScreen.tsx(136,80): error TS2322: Type '{ children: Element[]; entering: FadeInDown; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+src/screens/WorkoutDisplayScreen.tsx(137,27): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: (false | Element)[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: (false | Element)[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutDisplayScreen.tsx(138,31): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutDisplayScreen.tsx(146,35): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutDisplayScreen.tsx(160,25): error TS2322: Type '{ title: string; variant: "outline"; onPress: () => any; className: string; }' is not assignable to type 'IntrinsicAttributes & ButtonProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & ButtonProps'.
+src/screens/WorkoutDisplayScreen.tsx(177,27): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutDisplayScreen.tsx(178,31): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutDisplayScreen.tsx(199,29): error TS2322: Type '{ title: string; onPress: () => Promise<void>; disabled: boolean; className: string; }' is not assignable to type 'IntrinsicAttributes & ButtonProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & ButtonProps'.
+src/screens/WorkoutInputScreen.tsx(155,17): error TS2322: Type '{ children: Element[]; interactive: true; accentOnHover: true; onPress: () => any; onLongPress: () => void; delayLongPress: number; className: string; }' is not assignable to type 'IntrinsicAttributes & CardProps'.
+  Property 'onLongPress' does not exist on type 'IntrinsicAttributes & CardProps'.
+src/screens/WorkoutInputScreen.tsx(159,42): error TS2322: Type '{ children: string; variant: "h3"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutInputScreen.tsx(160,44): error TS2322: Type '{ children: (string | number)[]; variant: "body"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutInputScreen.tsx(169,29): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ScrollViewProps): ScrollView', gave the following error.
+    Type '{ children: Element[]; className: string; showsVerticalScrollIndicator: false; keyboardShouldPersistTaps: "handled"; scrollEnabled: boolean; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<ScrollView> & Readonly<ScrollViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<ScrollView> & Readonly<ScrollViewProps>'.
+  Overload 2 of 2, '(props: ScrollViewProps, context: any): ScrollView', gave the following error.
+    Type '{ children: Element[]; className: string; showsVerticalScrollIndicator: false; keyboardShouldPersistTaps: "handled"; scrollEnabled: boolean; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<ScrollView> & Readonly<ScrollViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<ScrollView> & Readonly<ScrollViewProps>'.
+src/screens/WorkoutInputScreen.tsx(170,27): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: (false | Element)[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: (false | Element)[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutInputScreen.tsx(174,56): error TS2322: Type '{ children: string; variant: "body"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutInputScreen.tsx(182,33): error TS2322: Type '{ title: string; variant: "outline"; onPress: () => void; fullWidth: false; className: string; }' is not assignable to type 'IntrinsicAttributes & ButtonProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & ButtonProps'.
+src/screens/WorkoutInputScreen.tsx(187,83): error TS2322: Type '{ children: Element; entering: FadeInDown; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+src/screens/WorkoutInputScreen.tsx(195,27): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutInputScreen.tsx(196,87): error TS2322: Type '{ children: Element[]; entering: FadeInDown; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+src/screens/WorkoutInputScreen.tsx(197,54): error TS2322: Type '{ children: (string | Element)[]; variant: "h3"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutInputScreen.tsx(198,35): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutInputScreen.tsx(199,39): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutInputScreen.tsx(200,39): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutInputScreen.tsx(202,57): error TS2322: Type '{ children: string; variant: "label"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutInputScreen.tsx(203,35): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutInputScreen.tsx(205,63): error TS2322: Type '{ children: Element; key: string; className: string; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & TouchableOpacityProps & RefAttributes<View>'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TouchableOpacityProps & RefAttributes<View>'.
+src/screens/WorkoutInputScreen.tsx(206,68): error TS2322: Type '{ children: string; variant: "body"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutInputScreen.tsx(210,57): error TS2322: Type '{ children: string; variant: "label"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutInputScreen.tsx(211,35): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutInputScreen.tsx(213,65): error TS2322: Type '{ children: Element; key: string; className: string; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & TouchableOpacityProps & RefAttributes<View>'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TouchableOpacityProps & RefAttributes<View>'.
+src/screens/WorkoutInputScreen.tsx(214,68): error TS2322: Type '{ children: string; variant: "body"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutInputScreen.tsx(220,87): error TS2322: Type '{ children: Element[]; entering: FadeInDown; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+src/screens/WorkoutInputScreen.tsx(221,54): error TS2322: Type '{ children: (string | Element)[]; variant: "h3"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutInputScreen.tsx(222,35): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutInputScreen.tsx(224,73): error TS2322: Type '{ children: Element; key: string; className: string; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & TouchableOpacityProps & RefAttributes<View>'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TouchableOpacityProps & RefAttributes<View>'.
+src/screens/WorkoutInputScreen.tsx(225,69): error TS2322: Type '{ children: string[]; variant: "label"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutInputScreen.tsx(229,35): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: (false | Element)[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: (false | Element)[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutInputScreen.tsx(231,55): error TS2322: Type '{ children: Element[]; className: string; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & TouchableOpacityProps & RefAttributes<View>'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TouchableOpacityProps & RefAttributes<View>'.
+src/screens/WorkoutInputScreen.tsx(232,69): error TS2322: Type '{ children: string; variant: "label"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutInputScreen.tsx(233,68): error TS2322: Type '{ children: string; variant: "body"; className: string; numberOfLines: number; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutInputScreen.tsx(236,43): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutInputScreen.tsx(237,68): error TS2322: Type '{ children: string; variant: "body"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutInputScreen.tsx(243,51): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutInputScreen.tsx(248,55): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutInputScreen.tsx(249,80): error TS2322: Type '{ children: string; variant: "body"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutInputScreen.tsx(250,109): error TS2322: Type '{ children: Element; onPress: () => void; className: string; }' is not assignable to type 'IntrinsicAttributes & TouchableOpacityProps & RefAttributes<View>'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TouchableOpacityProps & RefAttributes<View>'.
+src/screens/WorkoutInputScreen.tsx(258,43): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutInputScreen.tsx(260,63): error TS2322: Type '{ children: Element; className: string; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & TouchableOpacityProps & RefAttributes<View>'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TouchableOpacityProps & RefAttributes<View>'.
+src/screens/WorkoutInputScreen.tsx(260,197): error TS2322: Type '{ children: string[]; variant: "body"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutInputScreen.tsx(262,79): error TS2322: Type '{ children: Element; key: number; className: string; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & TouchableOpacityProps & RefAttributes<View>'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TouchableOpacityProps & RefAttributes<View>'.
+src/screens/WorkoutInputScreen.tsx(262,209): error TS2322: Type '{ children: string; variant: "body"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutInputScreen.tsx(270,87): error TS2322: Type '{ children: (false | Element)[]; entering: FadeInDown; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+src/screens/WorkoutInputScreen.tsx(271,54): error TS2322: Type '{ children: (string | Element)[]; variant: "h3"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutInputScreen.tsx(272,35): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutInputScreen.tsx(276,72): error TS2322: Type '{ children: Element; key: string; className: string; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & TouchableOpacityProps & RefAttributes<View>'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TouchableOpacityProps & RefAttributes<View>'.
+src/screens/WorkoutInputScreen.tsx(277,72): error TS2322: Type '{ children: string; variant: "body"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutInputScreen.tsx(285,88): error TS2322: Type '{ children: Element[]; entering: FadeInDown; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+src/screens/WorkoutInputScreen.tsx(286,54): error TS2322: Type '{ children: (string | Element)[]; variant: "h3"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutInputScreen.tsx(287,57): error TS2322: Type '{ children: string[]; variant: "label"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutInputScreen.tsx(288,35): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutInputScreen.tsx(290,63): error TS2322: Type '{ children: Element; key: number; className: string; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & TouchableOpacityProps & RefAttributes<View>'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TouchableOpacityProps & RefAttributes<View>'.
+src/screens/WorkoutInputScreen.tsx(291,66): error TS2322: Type '{ children: number; variant: "h3"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutInputScreen.tsx(297,88): error TS2322: Type '{ children: Element[]; entering: FadeInDown; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+src/screens/WorkoutInputScreen.tsx(298,54): error TS2322: Type '{ children: (string | Element)[]; variant: "h3"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutInputScreen.tsx(302,88): error TS2322: Type '{ children: Element; entering: FadeInDown; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+src/screens/WorkoutInputScreen.tsx(314,19): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: (false | Element | null)[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: (false | Element | null)[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutInputScreen.tsx(315,23): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutInputScreen.tsx(320,27): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: (false | Element)[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: (false | Element)[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutInputScreen.tsx(321,125): error TS2322: Type '{ title: string; variant: "outline"; onPress: () => void; fullWidth: false; className: string; }' is not assignable to type 'IntrinsicAttributes & ButtonProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & ButtonProps'.
+src/screens/WorkoutInputScreen.tsx(323,35): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutInputScreen.tsx(324,74): error TS2322: Type '{ children: Element; onPress: () => Promise<void>; className: string; }' is not assignable to type 'IntrinsicAttributes & TouchableOpacityProps & RefAttributes<View>'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TouchableOpacityProps & RefAttributes<View>'.
+src/screens/WorkoutInputScreen.tsx(324,194): error TS2322: Type '{ children: string; variant: "body"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutInputScreen.tsx(330,79): error TS2322: Type '{ children: Element; entering: FadeInDown; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+src/screens/WorkoutInputScreen.tsx(331,237): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutInputScreen.tsx(331,321): error TS2322: Type '{ children: string; variant: "h3"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutInputScreen.tsx(332,66): error TS2322: Type '{ children: Element; entering: FadeInRight; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+src/screens/WorkoutInputScreen.tsx(333,39): error TS2322: Type '{ children: Element; className: string; onPress: () => void; }' is not assignable to type 'IntrinsicAttributes & TouchableOpacityProps & RefAttributes<View>'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TouchableOpacityProps & RefAttributes<View>'.
+src/screens/WorkoutInputScreen.tsx(333,191): error TS2322: Type '{ children: string; variant: "h1"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutInputScreen.tsx(338,31): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutInputScreen.tsx(339,35): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutInputScreen.tsx(340,39): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutInputScreen.tsx(340,158): error TS2322: Type '{ children: (string | number)[]; variant: "body"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutInputScreen.tsx(341,97): error TS2322: Type '{ children: Element; onPress: () => void; className: string; }' is not assignable to type 'IntrinsicAttributes & TouchableOpacityProps & RefAttributes<View>'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TouchableOpacityProps & RefAttributes<View>'.
+src/screens/WorkoutInputScreen.tsx(343,35): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutInputScreen.tsx(346,137): error TS2322: Type '{ title: string; variant: "outline"; onPress: () => void; className: string; }' is not assignable to type 'IntrinsicAttributes & ButtonProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & ButtonProps'.
+src/screens/WorkoutLoggingScreen.tsx(295,29): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ScrollViewProps): ScrollView', gave the following error.
+    Type '{ children: (Element | Element[] | undefined)[]; className: string; showsVerticalScrollIndicator: false; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<ScrollView> & Readonly<ScrollViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<ScrollView> & Readonly<ScrollViewProps>'.
+  Overload 2 of 2, '(props: ScrollViewProps, context: any): ScrollView', gave the following error.
+    Type '{ children: (Element | Element[] | undefined)[]; className: string; showsVerticalScrollIndicator: false; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<ScrollView> & Readonly<ScrollViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<ScrollView> & Readonly<ScrollViewProps>'.
+src/screens/WorkoutLoggingScreen.tsx(297,50): error TS2322: Type '{ children: string | undefined; variant: "h2"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutLoggingScreen.tsx(298,52): error TS2322: Type '{ children: string; variant: "body"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutLoggingScreen.tsx(310,33): error TS2322: Type '{ children: Element[]; interactive: true; accentOnHover: true; onPress: () => void; className: string; }' is not assignable to type 'IntrinsicAttributes & CardProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & CardProps'.
+src/screens/WorkoutLoggingScreen.tsx(313,61): error TS2322: Type '{ children: string[]; variant: "label"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutLoggingScreen.tsx(322,29): error TS2322: Type '{ title: string; onPress: () => any; className: string; }' is not assignable to type 'IntrinsicAttributes & ButtonProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & ButtonProps'.
+src/screens/WorkoutLoggingScreen.tsx(328,29): error TS2322: Type '{ title: string; variant: "outline"; onPress: () => any; className: string; }' is not assignable to type 'IntrinsicAttributes & ButtonProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & ButtonProps'.
+src/screens/WorkoutLoggingScreen.tsx(344,29): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ScrollViewProps): ScrollView', gave the following error.
+    Type '{ children: (Element | Element[])[]; className: string; showsVerticalScrollIndicator: false; keyboardShouldPersistTaps: "handled"; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<ScrollView> & Readonly<ScrollViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<ScrollView> & Readonly<ScrollViewProps>'.
+  Overload 2 of 2, '(props: ScrollViewProps, context: any): ScrollView', gave the following error.
+    Type '{ children: (Element | Element[])[]; className: string; showsVerticalScrollIndicator: false; keyboardShouldPersistTaps: "handled"; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<ScrollView> & Readonly<ScrollViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<ScrollView> & Readonly<ScrollViewProps>'.
+src/screens/WorkoutLoggingScreen.tsx(345,27): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutLoggingScreen.tsx(346,87): error TS2322: Type '{ children: Element; entering: FadeInDown; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+src/screens/WorkoutLoggingScreen.tsx(369,29): error TS2322: Type '{ children: Element[]; key: number; entering: FadeInDown; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+src/screens/WorkoutLoggingScreen.tsx(371,35): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutLoggingScreen.tsx(372,58): error TS2322: Type '{ children: string; variant: "h3"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutLoggingScreen.tsx(373,93): error TS2322: Type '{ children: Element; onPress: () => void; className: string; }' is not assignable to type 'IntrinsicAttributes & TouchableOpacityProps & RefAttributes<View>'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TouchableOpacityProps & RefAttributes<View>'.
+src/screens/WorkoutLoggingScreen.tsx(378,57): error TS2322: Type '{ children: string[]; variant: "label"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutLoggingScreen.tsx(382,35): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutLoggingScreen.tsx(383,60): error TS2322: Type '{ children: string[]; variant: "body"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutLoggingScreen.tsx(388,35): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutLoggingScreen.tsx(393,41): error TS2322: Type '{ children: Element[]; key: number; entering: FadeInDown; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+src/screens/WorkoutLoggingScreen.tsx(448,33): error TS2322: Type '{ children: Element; onPress: () => void; className: string; }' is not assignable to type 'IntrinsicAttributes & TouchableOpacityProps & RefAttributes<View>'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TouchableOpacityProps & RefAttributes<View>'.
+src/screens/WorkoutLoggingScreen.tsx(450,61): error TS2322: Type '{ children: string; variant: "label"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutLoggingScreen.tsx(455,83): error TS2322: Type '{ children: Element[]; entering: FadeInDown; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<AnimatedProps<ViewProps>, any, any>> & Readonly<...>'.
+src/screens/WorkoutLoggingScreen.tsx(465,29): error TS2322: Type '{ title: string; variant: "outline"; onPress: () => void; className: string; }' is not assignable to type 'IntrinsicAttributes & ButtonProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & ButtonProps'.
+src/screens/WorkoutLoggingScreen.tsx(480,31): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: Element[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutLoggingScreen.tsx(481,54): error TS2322: Type '{ children: any; variant: "h3"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutLoggingScreen.tsx(486,31): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: ViewProps): View', gave the following error.
+    Type '{ children: any[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+  Overload 2 of 2, '(props: ViewProps, context: any): View', gave the following error.
+    Type '{ children: any[]; className: string; }' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+      Property 'className' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<View> & Readonly<ViewProps>'.
+src/screens/WorkoutLoggingScreen.tsx(488,61): error TS2322: Type '{ children: string; variant: "label"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutLoggingScreen.tsx(489,60): error TS2322: Type '{ children: any[]; variant: "body"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutLoggingScreen.tsx(492,61): error TS2322: Type '{ children: string; variant: "label"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutLoggingScreen.tsx(493,60): error TS2322: Type '{ children: any; variant: "body"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutLoggingScreen.tsx(496,61): error TS2322: Type '{ children: string; variant: "label"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutLoggingScreen.tsx(497,60): error TS2322: Type '{ children: any; variant: "body"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutLoggingScreen.tsx(501,65): error TS2322: Type '{ children: string; variant: "label"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.
+src/screens/WorkoutLoggingScreen.tsx(502,64): error TS2322: Type '{ children: any; variant: "body"; className: string; }' is not assignable to type 'IntrinsicAttributes & TypographyProps'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & TypographyProps'.

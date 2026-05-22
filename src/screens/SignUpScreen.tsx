@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, ActivityIndicator, Alert } from 'react-native';
-import { styled } from 'nativewind';
+import { View, ActivityIndicator, Alert } from 'react-native';
 import { useAuth } from '../context/AuthContext';
 import ScreenWrapper from '../components/ScreenWrapper';
 import Animated, { FadeInDown, FadeInUp } from 'react-native-reanimated';
-
-const StyledView = styled(View);
-const StyledText = styled(Text);
-const StyledInput = styled(TextInput);
-const StyledButton = styled(TouchableOpacity);
-
-const StyledAnimatedView = styled(Animated.View);
+import { Button } from '../components/ui/Button';
+import { TextInput } from '../components/ui/TextInput';
+import { Typography } from '../components/ui/Typography';
+import { DotsPattern } from '../components/patterns/DotsPattern';
 
 export default function SignUpScreen({ navigation }: any) {
     const [email, setEmail] = useState('');
@@ -35,57 +31,56 @@ export default function SignUpScreen({ navigation }: any) {
     };
 
     return (
-        <ScreenWrapper className="justify-center px-6">
-            <StyledAnimatedView entering={FadeInUp.delay(200).duration(1000).springify()}>
-                <StyledText className="text-primary text-4xl font-bold mb-2 text-center tracking-tighter">Join FlexTrack</StyledText>
-                <StyledText className="text-gray-400 text-center mb-12 text-lg">Start your journey today</StyledText>
-            </StyledAnimatedView>
+        <ScreenWrapper className="justify-center px-6 bg-swiss-bg">
+            <DotsPattern />
+            
+            <Animated.View entering={FadeInUp.delay(200).duration(1000)} className="mb-12">
+                <Typography variant="h1" className="text-swiss-accent">JOIN</Typography>
+                <Typography variant="h1" className="text-swiss-fg">THE SYSTEM</Typography>
+                <Typography variant="body" className="mt-4">
+                    BEGIN YOUR OBJECTIVE FITNESS JOURNEY.
+                </Typography>
+            </Animated.View>
 
-            <StyledView className="space-y-4">
-                <StyledAnimatedView entering={FadeInDown.delay(400).duration(1000).springify()}>
-                    <StyledInput
-                        className="bg-surface/80 text-white p-4 rounded-2xl border border-gray-700 focus:border-primary text-lg"
-                        placeholder="Email"
-                        placeholderTextColor="#666"
+            <View className="space-y-4">
+                <Animated.View entering={FadeInDown.delay(400).duration(1000)}>
+                    <TextInput
+                        label="Email Address"
+                        placeholder="NAME@EXAMPLE.COM"
                         value={email}
                         onChangeText={setEmail}
                         autoCapitalize="none"
                     />
-                </StyledAnimatedView>
+                </Animated.View>
 
-                <StyledAnimatedView entering={FadeInDown.delay(600).duration(1000).springify()}>
-                    <StyledInput
-                        className="bg-surface/80 text-white p-4 rounded-2xl border border-gray-700 focus:border-primary text-lg"
-                        placeholder="Password"
-                        placeholderTextColor="#666"
+                <Animated.View entering={FadeInDown.delay(600).duration(1000)}>
+                    <TextInput
+                        label="Password"
+                        placeholder="ENTER PASSWORD"
                         value={password}
                         onChangeText={setPassword}
                         secureTextEntry
                     />
-                </StyledAnimatedView>
+                </Animated.View>
 
-                <StyledAnimatedView entering={FadeInDown.delay(800).duration(1000).springify()}>
-                    <StyledButton
-                        className="bg-primary p-4 rounded-2xl mt-4 shadow-lg shadow-primary/20"
+                <Animated.View entering={FadeInDown.delay(800).duration(1000)}>
+                    <Button 
+                        title={loading ? "LOADING..." : "REGISTER"} 
                         onPress={handleSignUp}
                         disabled={loading}
-                    >
-                        {loading ? (
-                            <ActivityIndicator color="black" />
-                        ) : (
-                            <StyledText className="text-black font-bold text-center text-lg">Sign Up</StyledText>
-                        )}
-                    </StyledButton>
-                </StyledAnimatedView>
+                        className="mt-4"
+                    />
+                </Animated.View>
 
-                <StyledAnimatedView entering={FadeInDown.delay(1000).duration(1000).springify()}>
-                    <StyledButton onPress={() => navigation.navigate('Login')} className="mt-6">
-                        <StyledText className="text-gray-400 text-center text-base">
-                            Already have an account? <StyledText className="text-primary font-bold">Login</StyledText>
-                        </StyledText>
-                    </StyledButton>
-                </StyledAnimatedView>
-            </StyledView>
+                <Animated.View entering={FadeInDown.delay(1000).duration(1000)}>
+                    <Button 
+                        title="BACK TO LOGIN" 
+                        variant="outline"
+                        onPress={() => navigation.navigate('Login')}
+                        className="mt-6 border-transparent bg-transparent"
+                    />
+                </Animated.View>
+            </View>
         </ScreenWrapper>
     );
 }

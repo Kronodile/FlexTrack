@@ -40,5 +40,16 @@ export const LocalStorageService = {
             console.error('Error clearing workout plans from local storage:', e);
             throw e;
         }
+    },
+
+    /**
+     * Clear all app data from local storage (useful for logout)
+     */
+    clearAllData: async (): Promise<void> => {
+        try {
+            await AsyncStorage.clear();
+        } catch (e) {
+            console.error('Error clearing all data:', e);
+        }
     }
 };

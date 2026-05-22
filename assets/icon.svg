@@ -1,0 +1,26 @@
+<svg width="1024" height="1024" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" fill="#FFFFFF" />
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7C3AED" />
+      <stop offset="100%" stop-color="#A855F7" />
+    </linearGradient>
+  </defs>
+
+  <!-- Bar -->
+  <rect x="40" y="80" width="120" height="16" fill="#111827" />
+
+  <!-- Left dumbbell plates -->
+  <rect x="10" y="70" width="12" height="60" rx="6" fill="url(#grad)" />
+  <rect x="25" y="60" width="20" height="80" rx="8" fill="#111827" />
+
+  <!-- Right dumbbell plates -->
+  <rect x="178" y="70" width="12" height="60" rx="6" fill="url(#grad)" />
+  <rect x="155" y="60" width="20" height="80" rx="8" fill="#111827" />
+
+  <!-- F shape -->
+  <path d="M70 55 C70 45 76 40 88 40 H130 C122 55 118 58 108 58 H88 V80 H120 C115 92 110 95 100 95 H88 V145 H70 Z" fill="#111827" />
+
+  <!-- T shape -->
+  <path d="M88 80 H145 C140 94 130 98 120 98 H110 V155 H92 V98 H88 Z" fill="url(#grad)" />
+</svg>
